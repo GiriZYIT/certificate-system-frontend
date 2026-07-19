@@ -17,20 +17,19 @@ useEffect(() => {
 }, []);
 
 const loadDashboard = async () => {
-
     try {
-
+        setLoading(true);
         const res = await api.get("/interns");
-
         setInterns(res.data);
-
+        setError("");
     } catch (err) {
-
-        console.log(err);
-
+        console.error(err);
+        setError("Unable to load dashboard.");
+    } finally {
+        setLoading(false);
     }
-
 };
+
   return (
     <>
       <Sidebar />
@@ -110,6 +109,8 @@ const loadDashboard = async () => {
         </h2>
 
         <div className="table-card">
+          {loading && <p>Loading dashboard...</p>}
+          {error && <p className="error">{error}</p>}
 
           <table>
 
@@ -130,25 +131,26 @@ const loadDashboard = async () => {
             </thead>
 
             <tbody>
-
-                {interns.slice(0,5).map((intern)=>(
-                    <tr key={intern.certificate_id}>
-
-                        <td>{intern.certificate_id}</td>
-
-                        <td>{intern.intern_name}</td>
-
-                        <td>{intern.department}</td>
-
-                        <td>
-                            <span className="status active">
-                                {intern.status}
-                            </span>
-                        </td>
-
-                    </tr>
-                ))}
-
+                  {interns.length === 0 ? (
+                      <tr>
+                          <td colSpan="4" style={{ textAlign: "center", padding: "20px" }}>
+                              No certificates found.
+                          </td>
+                      </tr>
+                  ) : (
+                      interns.slice(0, 5).map((intern) => (
+                          <tr key={intern.certificate_id}>
+                              <td>{intern.certificate_id}</td>
+                              <td>{intern.intern_name}</td>
+                              <td>{intern.department}</td>
+                              <td>
+                                  <span className={`status ${intern.status.toLowerCase()}`}>
+                                      {intern.status}
+                                  </span>
+                              </td>
+                          </tr>
+                      ))
+                  )}
             </tbody>
           </table>
 
