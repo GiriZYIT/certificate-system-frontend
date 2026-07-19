@@ -166,3 +166,28 @@ color:#ddd;
 .notification-item:last-child{
     border-bottom:none;
 }
+
+@media (max-width:768px){
+
+    .topbar{
+        margin-left:0 !important;
+        width:100%;
+    }
+
+    .topbar-left h2{
+        font-size:22px;
+    }
+
+    .topbar-right{
+        gap:12px;
+    }
+
+    .admin-details{
+        display:none;
+    }
+
+    .notification-dropdown{
+        width:240px;
+        right:-10px;
+    }
+}

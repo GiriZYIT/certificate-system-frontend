@@ -159,3 +159,50 @@ background:#C9A84F;
 color:#072F5F;
 
 }
+
+@media (max-width:768px){
+
+    .stats-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .quick-grid{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .stat-card{
+        padding:18px;
+    }
+
+    .stat-left h2{
+        font-size:28px;
+    }
+
+    .stat-icon{
+        width:55px;
+        height:55px;
+        font-size:24px;
+    }
+
+    .quick-card{
+        padding:20px;
+    }
+
+    .quick-icon{
+        font-size:42px;
+    }
+
+    .quick-card h3{
+        font-size:20px;
+    }
+
+    .quick-card p{
+        font-size:14px;
+    }
+
+    .quick-card button{
+        width:100%;
+    }
+}

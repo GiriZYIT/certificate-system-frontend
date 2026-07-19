@@ -101,3 +101,26 @@ color:#072F5F;
 font-weight:bold;
 
 }
+
+@media (max-width:768px){
+
+    .form-page{
+        margin-left:80px;
+        padding:90px 15px;
+    }
+
+    .form-card{
+        padding:20px;
+        max-width:100%;
+    }
+
+    .form-card h1{
+        font-size:24px;
+    }
+
+    input,
+    button{
+        font-size:15px;
+        padding:14px;
+    }
+}

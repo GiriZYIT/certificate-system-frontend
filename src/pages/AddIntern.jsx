@@ -17,6 +17,8 @@ export default function AddIntern() {
     start_date: "",
     end_date: "",
     duration: "",
+    photo: null,
+    certificate_pdf: null,
   });
 
   const handleChange = (e) => {
@@ -25,6 +27,13 @@ export default function AddIntern() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const handleFileChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.files[0],
+  });
+};
 
   const { certificate_id } = useParams();
   const { addNotification } = useNotification();
@@ -78,10 +87,17 @@ export default function AddIntern() {
       }
       else {
 
-          await api.post(
-              "/intern",
-              formData
-          );
+          const data = new FormData();
+
+              Object.keys(formData).forEach((key) => {
+                  data.append(key, formData[key]);
+              });
+
+              await api.post("/intern", data, {
+                  headers: {
+                      "Content-Type": "multipart/form-data",
+                  },
+          });
 
           toast.success("Certificate Created Successfully");
 
@@ -195,6 +211,26 @@ export default function AddIntern() {
               placeholder="Duration"
               value={formData.duration}
               onChange={handleChange}
+              required
+            />
+
+            <label>Upload Intern Photo</label>
+
+            <input
+              type="file"
+              name="photo"
+              accept="image/*"
+              onChange={handleFileChange}
+              required
+            />
+
+            <label>Upload Certificate PDF</label>
+
+            <input
+              type="file"
+              name="certificate_pdf"
+              accept=".pdf"
+              onChange={handleFileChange}
               required
             />
 

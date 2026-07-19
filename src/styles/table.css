@@ -101,3 +101,34 @@ background:#C9A84F;
 color:#072F5F;
 
 }
+
+@media (max-width:768px){
+
+    .table-page{
+        margin-left:80px;
+        padding:90px 15px;
+    }
+
+    .table-wrapper{
+        padding:15px;
+    }
+
+    .table-wrapper h1{
+        font-size:22px;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    th,
+    td{
+        padding:10px;
+    }
+
+    a{
+        padding:6px 10px;
+        font-size:12px;
+    }
+
+}

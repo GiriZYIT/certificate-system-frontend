@@ -30,11 +30,9 @@ text-align:center;
 }
 
 .sidebar-logo{
-
-width:85px;
-
-margin-bottom:15px;
-
+    width:220px;
+    height:auto;
+    margin-bottom:1px;
 }
 
 .sidebar-top h1{
@@ -147,4 +145,42 @@ transition:.3s;
 
 background:white;
 
+}
+
+@media (max-width:768px){
+
+    .sidebar{
+         display:none !important;
+    }
+
+    .sidebar-logo{
+        width:60px;
+        margin-bottom:10px;
+    }
+
+    .sidebar-top h1,
+    .sidebar-top p{
+        display:none;
+    }
+
+    .menu-item{
+        justify-content:center;
+        padding:15px;
+        font-size:0;
+    }
+
+    .menu-item span{
+        font-size:22px;
+        margin:0;
+    }
+
+    .logout-btn{
+        font-size:0;
+        padding:15px;
+    }
+
+    .logout-btn::before{
+        content:"🚪";
+        font-size:22px;
+    }
 }
