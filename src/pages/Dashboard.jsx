@@ -11,6 +11,8 @@ import "../styles/dashboard.css";
 
 export default function Dashboard() {
   const [interns, setInterns] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
 useEffect(() => {
     loadDashboard();
