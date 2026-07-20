@@ -122,6 +122,18 @@ font-weight:bold;
 
 }
 
+.date-group{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.date-group label{
+    font-size:15px;
+    font-weight:600;
+    color:#555;
+}
+
 @media (max-width:768px){
 
     .form-page{

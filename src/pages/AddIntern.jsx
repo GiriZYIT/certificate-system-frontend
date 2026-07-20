@@ -190,21 +190,29 @@ export default function AddIntern() {
               required
             />
 
-            <input
-              type="date"
-              name="start_date"
-              value={formData.start_date}
-              onChange={handleChange}
-              required
-            />
+            <div className="date-group">
+              <label htmlFor="start_date">Start Date</label>
+              <input
+                type="date"
+                id="start_date"
+                name="start_date"
+                value={formData.start_date}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-            <input
-              type="date"
-              name="end_date"
-              value={formData.end_date}
-              onChange={handleChange}
-              required
-            />
+            <div className="date-group">
+              <label htmlFor="end_date">End Date</label>
+              <input
+                type="date"
+                id="end_date"
+                name="end_date"
+                value={formData.end_date}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
             <input
               type="text"
