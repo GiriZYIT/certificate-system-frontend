@@ -164,40 +164,21 @@ color:#ddd;
     border-bottom:none;
 }
 
+@media (max-width:1200px){
+
+.topbar{
+    left:220px;
+    width:calc(100% - 220px);
+}
+
+}
+
 @media (max-width:768px){
 
-    .topbar{
-        margin-left:0;
-        width:100%;
-        padding:0 15px;
-        height:70px;
-    }
+.topbar{
+    left:0;
+    width:100%;
+    padding:15px;
+}
 
-    .topbar-left h2{
-        font-size:22px;
-    }
-
-    .topbar-right{
-        gap:12px;
-    }
-
-    .avatar{
-        width:38px;
-        height:38px;
-        font-size:15px;
-    }
-
-    .admin-details{
-        display:none;
-    }
-
-    .notification{
-        font-size:20px;
-    }
-
-    .notification-dropdown{
-        width:260px;
-        max-width:90vw;
-        right:0;
-    }
 }

@@ -154,3 +154,45 @@ color:#2E8B57;
         white-space:nowrap;
     }
 }
+
+/* Tablet */
+@media (max-width:1200px){
+
+.dashboard{
+    margin-left:220px;
+    width:calc(100% - 220px);
+    padding:100px 25px;
+}
+
+.stats-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.quick-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+.dashboard{
+    margin-left:0;
+    width:100%;
+    padding:85px 15px 20px;
+}
+
+.stats-grid{
+    grid-template-columns:1fr;
+}
+
+.quick-grid{
+    grid-template-columns:1fr;
+}
+
+.table-card{
+    overflow-x:auto;
+}
+
+}
