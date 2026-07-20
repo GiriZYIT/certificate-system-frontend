@@ -1,0 +1,26 @@
+.content{
+    margin-left:260px;
+    min-height:100vh;
+    padding:110px 40px 40px;
+    background:#F4F7FB;
+    box-sizing:border-box;
+    overflow-x:hidden;
+}
+
+@media (max-width:1200px){
+
+.content{
+    margin-left:220px;
+    padding:100px 25px;
+}
+
+}
+
+@media (max-width:768px){
+
+.content{
+    margin-left:0;
+    padding:85px 15px 20px;
+}
+
+}

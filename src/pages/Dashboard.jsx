@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import "../styles/layout.css";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import StatCard from "../components/StatCard";
@@ -37,7 +37,7 @@ const loadDashboard = async () => {
       <Sidebar />
       <Topbar />
 
-      <div className="dashboard">
+      <div className="content dashboard">
 
         <div className="welcome-card">
 

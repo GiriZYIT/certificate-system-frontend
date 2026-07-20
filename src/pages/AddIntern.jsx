@@ -6,6 +6,7 @@ import api from "../services/api";
 import "../styles/form.css";
 import { toast } from "react-toastify";
 import { useNotification } from "../context/NotificationContext";
+import "../styles/layout.css";
 
 export default function AddIntern() {
   const [formData, setFormData] = useState({
@@ -129,7 +130,7 @@ export default function AddIntern() {
       <Sidebar />
       <Topbar />
 
-      <div className="form-page">
+      <div className="content form-page">
 
         <div className="form-card">
 

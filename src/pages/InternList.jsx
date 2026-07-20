@@ -5,7 +5,7 @@ import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import { useNotification } from "../context/NotificationContext";
 import { toast } from "react-toastify";
-
+import "../styles/layout.css";
 import "../styles/table.css";
 
 export default function InternList() {
@@ -46,7 +46,7 @@ export default function InternList() {
 
             <Topbar />
 
-            <div className="table-page">
+            <div className="content table-page">
 
                 <div className="table-wrapper">
 
