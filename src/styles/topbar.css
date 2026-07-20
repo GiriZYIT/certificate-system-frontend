@@ -1,19 +1,18 @@
 .topbar{
-    height:80px;
-    margin-left:260px;
-    width:calc(100% - 260px);
-    background:#072F5F;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 40px;
-    color:white;
-    box-shadow:0 2px 15px rgba(0,0,0,.15);
-    position:fixed;
-    top:0;
-    right:0;
-    z-index:999;
-    box-sizing:border-box;
+    position: fixed;
+    top: 0;
+    left: 260px;
+    right: 0;
+    height: 80px;
+    background: #072F5F;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    color: white;
+    box-shadow: 0 2px 15px rgba(0,0,0,.15);
+    z-index: 999;
+    box-sizing: border-box;
 }
 
 .topbar-left h2{
@@ -168,7 +167,8 @@ color:#ddd;
 
 .topbar{
     left:220px;
-    width:calc(100% - 220px);
+    right:0;
+    padding:0 25px;
 }
 
 }
@@ -177,8 +177,22 @@ color:#ddd;
 
 .topbar{
     left:0;
+    right:0;
     width:100%;
-    padding:15px;
+    height:70px;
+    padding:0 15px;
+}
+
+.topbar-left h2{
+    font-size:22px;
+}
+
+.topbar-right{
+    gap:15px;
+}
+
+.admin-details{
+    display:none;
 }
 
 }
