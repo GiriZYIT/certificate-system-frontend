@@ -49,23 +49,45 @@ gap:18px;
 
 }
 
-input{
+input,
+select,
+textarea{
 
+width:100%;
 padding:16px;
-
 font-size:16px;
-
+font-family:inherit;
+background:#fff;
+color:#333;
 border:1px solid #ddd;
-
 border-radius:10px;
-
 outline:none;
+box-sizing:border-box;
+transition:0.3s;
 
 }
 
-input:focus{
+input:focus,
+select:focus,
+textarea:focus{
 
 border-color:#072F5F;
+box-shadow:0 0 0 3px rgba(7,47,95,.12);
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+color:#999;
+
+}
+
+input[type="file"]{
+
+padding:12px;
+background:#fff;
+cursor:pointer;
 
 }
 
