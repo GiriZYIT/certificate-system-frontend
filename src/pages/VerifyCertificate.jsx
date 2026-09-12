@@ -50,24 +50,27 @@ export default function VerifyCertificate() {
       <div className="verify-page">
 
         <header className="verify-header">
-            <div className="brand">
+          <div className="brand">
 
-                <img
-                src={logo}
-                alt="ZYVENIQ Logo"
-                className="brand-logo"
-                />
+            <img
+              src={logo}
+              alt="ZYVENIQ Logo"
+              className="brand-logo"
+            />
 
-                <div className="brand-name">
+            <div className="brand-text">
+              <div className="brand-name">
                 ZYVENIQ
-                </div>
+              </div>
 
-                <div className="brand-tagline">
+              <div className="brand-tagline">
                 wear the moment
-                </div>
-
+              </div>
             </div>
+
+          </div>
         </header>
+
 
         <main className="invalid-certificate">
 
@@ -75,7 +78,9 @@ export default function VerifyCertificate() {
             ✕
           </div>
 
-          <h1>INVALID CERTIFICATE</h1>
+          <h1>
+            INVALID CERTIFICATE
+          </h1>
 
           <p>
             This certificate could not be found or verified.
@@ -87,6 +92,7 @@ export default function VerifyCertificate() {
 
         </main>
 
+
         <footer>
           © 2026 Zyveniq Private Limited. All rights reserved.
         </footer>
@@ -95,6 +101,7 @@ export default function VerifyCertificate() {
     );
   }
 
+
   /* =========================
      VERIFIED CERTIFICATE
   ========================= */
@@ -102,22 +109,48 @@ export default function VerifyCertificate() {
   return (
     <div className="verify-page">
 
-      {/* HEADER */}
+      {/* =================================================
+          HEADER
+          ================================================= */}
+
       <header className="verify-header">
 
-        <img
-          src={logo}
-          alt="ZYVENIQ"
-          className="verify-logo"
-        />
+        <div className="brand">
+
+          <img
+            src={logo}
+            alt="ZYVENIQ Logo"
+            className="brand-logo"
+          />
+
+          <div className="brand-text">
+
+            <div className="brand-name">
+              ZYVENIQ
+            </div>
+
+            <div className="brand-tagline">
+              wear the moment
+            </div>
+
+          </div>
+
+        </div>
 
       </header>
 
 
-      {/* MAIN CONTENT */}
+      {/* =================================================
+          MAIN CONTENT
+          ================================================= */}
+
       <main className="verification-container">
 
-        {/* LEFT SIDE */}
+
+        {/* =================================================
+            LEFT SIDE
+            ================================================= */}
+
         <section className="verification-left">
 
           <h1>
@@ -130,6 +163,7 @@ export default function VerifyCertificate() {
 
 
           {/* VERIFIED SECTION */}
+
           <div className="verified-section">
 
             <div className="verified-shield">
@@ -153,6 +187,7 @@ export default function VerifyCertificate() {
 
 
           {/* SECURITY BOX */}
+
           <div className="security-box">
 
             <div className="security-row">
@@ -185,13 +220,17 @@ export default function VerifyCertificate() {
         </section>
 
 
-        {/* RIGHT SIDE - CERTIFICATE DETAILS */}
+        {/* =================================================
+            RIGHT SIDE
+            ================================================= */}
+
         <section className="certificate-card">
 
           <div className="certificate-details">
 
 
             {/* INTERN NAME */}
+
             <div className="detail-item">
 
               <span>
@@ -206,6 +245,7 @@ export default function VerifyCertificate() {
 
 
             {/* ROLE */}
+
             <div className="detail-item">
 
               <span>
@@ -220,6 +260,7 @@ export default function VerifyCertificate() {
 
 
             {/* DEPARTMENT */}
+
             <div className="detail-item">
 
               <span>
@@ -234,6 +275,7 @@ export default function VerifyCertificate() {
 
 
             {/* START DATE */}
+
             <div className="detail-item">
 
               <span>
@@ -248,6 +290,7 @@ export default function VerifyCertificate() {
 
 
             {/* END DATE */}
+
             <div className="detail-item">
 
               <span>
@@ -262,6 +305,7 @@ export default function VerifyCertificate() {
 
 
             {/* DURATION */}
+
             <div className="detail-item">
 
               <span>
@@ -276,6 +320,7 @@ export default function VerifyCertificate() {
 
 
             {/* CERTIFICATE ID */}
+
             <div className="detail-item">
 
               <span>
@@ -290,6 +335,7 @@ export default function VerifyCertificate() {
 
 
             {/* ISSUE DATE = END DATE */}
+
             <div className="detail-item">
 
               <span>
@@ -304,6 +350,7 @@ export default function VerifyCertificate() {
 
 
             {/* STATUS */}
+
             <div className="detail-item status-item">
 
               <span>
@@ -318,7 +365,6 @@ export default function VerifyCertificate() {
 
             </div>
 
-
           </div>
 
         </section>
@@ -326,11 +372,12 @@ export default function VerifyCertificate() {
       </main>
 
 
-      {/* FOOTER */}
+      {/* =================================================
+          FOOTER
+          ================================================= */}
+
       <footer>
-
         © 2026 Zyveniq Private Limited. All rights reserved.
-
       </footer>
 
     </div>
