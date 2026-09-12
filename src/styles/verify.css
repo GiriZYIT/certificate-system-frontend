@@ -1,5 +1,5 @@
 /* =========================================================
-   ZYVENIQ CERTIFICATE VERIFICATION
+   ZYVENIQ CERTIFICATE VERIFICATION PAGE
    ========================================================= */
 
 * {
@@ -9,9 +9,9 @@
 .verify-page {
   min-height: 100vh;
   width: 100%;
-  background: #f6f8fc;
-  color: #0b1f3a;
-  font-family: Georgia, "Times New Roman", serif;
+  background: #f5f7fb;
+  color: #102542;
+  font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -22,97 +22,157 @@
 
 .verify-header {
   width: 100%;
-  padding: 35px 20px 25px;
-  text-align: center;
-  background: #f6f8fc;
+  height: 90px;
+
+  background: #061f45;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 55px;
 }
 
+
+/*
+   IMPORTANT:
+   logo.webp contains the actual ZYVENIQ logo.
+*/
+
 .verify-logo {
-  width: 190px;
+  width: 225px;
   height: auto;
+
   display: block;
-  margin: 0 auto;
+  object-fit: contain;
 }
 
 
 /* =========================================================
-   MAIN CONTAINER
+   MAIN LAYOUT
    ========================================================= */
 
 .verification-container {
   width: 100%;
-  max-width: 1150px;
+  max-width: 1280px;
+
   margin: 0 auto;
-  padding: 35px 30px 60px;
+
+  padding: 55px 35px 30px;
 
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 55px;
+
+  grid-template-columns: 1fr 1.25fr;
+
+  gap: 65px;
+
   align-items: center;
 }
 
 
 /* =========================================================
-   LEFT VERIFICATION SECTION
+   LEFT VERIFICATION AREA
    ========================================================= */
 
 .verification-left {
-  text-align: center;
+  width: 100%;
 }
 
 .verification-left h1 {
-  margin: 0 0 10px;
-  font-size: 48px;
-  line-height: 1.15;
-  font-weight: 600;
-  color: #071a35;
+  margin: 0;
+
+  color: #08234b;
+
+  font-size: 38px;
+  font-weight: 700;
+
+  line-height: 1.2;
 }
 
 .verification-subtitle {
-  margin: 0 0 45px;
-  color: #74839a;
-  font-size: 20px;
+  margin: 12px 0 50px;
+
+  color: #61718a;
+
+  font-size: 19px;
+
   line-height: 1.5;
 }
 
 
 /* =========================================================
-   VERIFIED ICON
+   VERIFIED SECTION
    ========================================================= */
 
-.verified-icon {
-  width: 125px;
-  height: 125px;
-  margin: 0 auto 25px;
-
+.verified-section {
   display: flex;
-  justify-content: center;
   align-items: center;
 
-  border-radius: 50%;
-  background: #dff7e9;
-  color: #159447;
+  gap: 30px;
 
-  font-size: 75px;
+  margin-bottom: 50px;
+}
+
+
+/* GREEN SHIELD */
+
+.verified-shield {
+  width: 95px;
+  height: 110px;
+
+  flex-shrink: 0;
+
+  background: #13a64a;
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 55px;
   font-weight: bold;
+
+  /*
+     Shield-like shape
+  */
+
+  clip-path: polygon(
+    50% 0%,
+    94% 20%,
+    94% 55%,
+    82% 76%,
+    50% 100%,
+    18% 76%,
+    6% 55%,
+    6% 20%
+  );
 }
 
-.verification-left h2 {
-  margin: 0 0 20px;
+
+/* VERIFIED TEXT */
+
+.verified-content h2 {
+  margin: 0 0 12px;
 
   color: #159447;
-  font-size: 38px;
+
+  font-size: 30px;
+
   line-height: 1.2;
-  font-weight: 600;
+
+  font-weight: 700;
 }
 
-.verified-description {
-  max-width: 500px;
-  margin: 0 auto 35px;
+.verified-content p {
+  max-width: 400px;
 
-  color: #607089;
-  font-size: 18px;
-  line-height: 1.7;
+  margin: 0;
+
+  color: #56677f;
+
+  font-size: 16px;
+
+  line-height: 1.6;
 }
 
 
@@ -122,53 +182,59 @@
 
 .security-box {
   width: 100%;
-  max-width: 520px;
-  margin: 0 auto;
 
-  padding: 22px;
+  padding: 25px 30px;
 
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
+  background: #eaf8ef;
 
-  text-align: left;
+  border: 1px solid #ccebd7;
 
-  background: #e8f8ef;
-  border: 2px solid #c8ecd8;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
-.security-icon {
-  min-width: 45px;
-  width: 45px;
-  height: 45px;
+
+.security-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  color: #218548;
+
+  font-size: 16px;
+
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+.security-row + .security-row {
+  margin-top: 18px;
+}
+
+
+/* SECURITY CHECK */
+
+.security-check {
+  width: 25px;
+  height: 25px;
+
+  flex-shrink: 0;
+
+  border: 2px solid #159447;
+
+  border-radius: 50%;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border-radius: 50%;
-  background: #20a75b;
-  color: white;
+  color: #159447;
 
-  font-size: 25px;
+  font-size: 15px;
+
   font-weight: bold;
-}
-
-.security-box strong {
-  display: block;
-
-  color: #206b45;
-  font-size: 17px;
-  line-height: 1.5;
-}
-
-.security-box p {
-  margin: 8px 0 0;
-
-  color: #557363;
-  font-size: 14px;
-  line-height: 1.5;
 }
 
 
@@ -180,62 +246,60 @@
   width: 100%;
 
   background: white;
-  border-radius: 20px;
-  overflow: hidden;
+
+  border-radius: 14px;
 
   box-shadow:
-    0 15px 45px rgba(8, 31, 58, 0.10);
+    0 8px 25px rgba(12, 37, 68, 0.08);
+
+  overflow: hidden;
 }
 
 
-/* =========================================================
-   CERTIFICATE CARD HEADER
-   ========================================================= */
+/*
+   TOP BLUE BORDER / HEADER
+*/
 
-.certificate-card-header {
-  min-height: 85px;
-  padding: 0 30px;
+.certificate-card::before {
+  content: "INTERNSHIP CERTIFICATE";
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: block;
 
-  gap: 15px;
+  width: 100%;
 
-  background: #071f3e;
-  color: white;
-}
+  padding: 25px 32px;
 
-.certificate-card-header > span:first-child {
-  font-size: 19px;
-  letter-spacing: 1.5px;
-  font-weight: 600;
-}
+  background: #061f45;
 
-.verified-badge {
-  padding: 12px 20px;
-
-  border-radius: 30px;
-
-  background: #20a75b;
   color: white;
 
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 18px;
+
+  font-weight: 700;
+
   letter-spacing: 0.5px;
 }
 
 
-/* =========================================================
-   CERTIFICATE DETAILS
-   ========================================================= */
+/* DETAILS */
 
 .certificate-details {
-  padding: 15px 35px 25px;
+  padding: 20px 30px 15px;
 }
 
+
+/* =========================================================
+   DETAIL ROWS
+   ========================================================= */
+
 .detail-item {
-  padding: 19px 0;
+  display: grid;
+
+  grid-template-columns: 230px 1fr;
+
+  align-items: center;
+
+  min-height: 60px;
 
   border-bottom: 1px solid #e5e8ed;
 }
@@ -244,27 +308,26 @@
   border-bottom: none;
 }
 
-.detail-item span {
-  display: block;
 
-  margin-bottom: 7px;
+/* LABEL */
 
-  color: #8a95a5;
+.detail-item > span:first-child {
+  color: #25364d;
 
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
+  font-size: 16px;
+
+  font-weight: 700;
 }
 
-.detail-item strong {
-  display: block;
 
-  color: #182638;
+/* VALUE */
 
-  font-size: 20px;
-  line-height: 1.4;
-  font-weight: 600;
+.detail-item > strong {
+  color: #27384f;
+
+  font-size: 16px;
+
+  font-weight: 400;
 
   word-break: break-word;
 }
@@ -274,8 +337,26 @@
    STATUS
    ========================================================= */
 
-.status-detail strong {
-  color: #159447;
+.status-item > strong {
+  display: flex;
+
+  align-items: center;
+}
+
+.status-badge {
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  border-radius: 8px;
+
+  background: #e2f6e9;
+
+  color: #168644;
+
+  font-size: 15px;
+
+  font-weight: 700;
 }
 
 
@@ -284,15 +365,21 @@
    ========================================================= */
 
 .verify-page footer {
-  width: 100%;
+  width: calc(100% - 30px);
 
-  padding: 25px 20px 35px;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 20px 10px;
+
+  border-top: 1px solid #e0e4eb;
 
   text-align: center;
 
-  color: #718096;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
+  color: #68778c;
+
+  font-size: 14px;
 }
 
 
@@ -304,19 +391,24 @@
   min-height: 100vh;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
 
-  background: #f6f8fc;
-  color: #071f3e;
+  background: #f5f7fb;
+
+  color: #061f45;
 }
 
 .loader {
   width: 45px;
   height: 45px;
 
-  border: 4px solid #dce3ec;
+  border: 4px solid #dfe5ed;
+
   border-top-color: #159447;
 
   border-radius: 50%;
@@ -327,8 +419,9 @@
 .verify-loading p {
   margin-top: 15px;
 
-  font-size: 15px;
   color: #718096;
+
+  font-size: 15px;
 }
 
 @keyframes spin {
@@ -343,56 +436,65 @@
    ========================================================= */
 
 .invalid-certificate {
-  min-height: 60vh;
+  min-height: 65vh;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
 
-  padding: 40px 20px;
-
   text-align: center;
+
+  padding: 40px 20px;
 }
 
 .invalid-icon {
-  width: 90px;
-  height: 90px;
+  width: 85px;
+  height: 85px;
 
   display: flex;
-  justify-content: center;
+
   align-items: center;
+  justify-content: center;
 
   border-radius: 50%;
 
   background: #fde8e8;
+
   color: #d32f2f;
 
-  font-size: 50px;
+  font-size: 45px;
+
   font-weight: bold;
 }
 
 .invalid-certificate h1 {
-  margin: 25px 0 10px;
+  margin: 20px 0 10px;
 
   color: #c62828;
-  font-size: 30px;
+
+  font-size: 28px;
 }
 
 .invalid-certificate p {
   color: #718096;
+
   font-size: 16px;
 }
 
 .certificate-id {
   margin-top: 15px;
+
   padding: 12px 18px;
 
   background: white;
+
   border-radius: 8px;
 
   color: #344054;
-  font-size: 14px;
 }
 
 
@@ -400,20 +502,32 @@
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
   .verification-container {
     grid-template-columns: 1fr;
-    max-width: 650px;
-    gap: 35px;
+
+    max-width: 700px;
+
+    gap: 40px;
   }
 
-  .verification-left h1 {
-    font-size: 38px;
+  .verification-left {
+    text-align: center;
   }
 
-  .verification-left h2 {
-    font-size: 32px;
+  .verification-subtitle {
+    margin-bottom: 30px;
+  }
+
+  .verified-section {
+    justify-content: center;
+
+    text-align: left;
+  }
+
+  .security-box {
+    text-align: left;
   }
 }
 
@@ -424,169 +538,216 @@
 
 @media (max-width: 768px) {
 
+  .verify-page {
+    min-height: 100vh;
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
   .verify-header {
-    padding: 18px 15px 12px;
+    height: 70px;
+
+    padding: 0 15px;
+
+    justify-content: center;
   }
 
   .verify-logo {
-    width: 135px;
+    width: 150px;
   }
 
+
+  /* -----------------------------------------
+     MAIN
+  ----------------------------------------- */
 
   .verification-container {
     width: 100%;
+
     max-width: 430px;
 
-    padding: 15px 12px 25px;
+    padding: 25px 14px 20px;
 
     display: flex;
+
     flex-direction: column;
 
-    gap: 20px;
+    gap: 25px;
   }
 
 
-  /* TITLE */
+  /* -----------------------------------------
+     TITLE
+  ----------------------------------------- */
+
+  .verification-left {
+    text-align: center;
+  }
 
   .verification-left h1 {
-    font-size: 25px;
-    line-height: 1.2;
+    font-size: 26px;
 
-    margin: 0 0 6px;
+    line-height: 1.2;
   }
 
   .verification-subtitle {
+    margin: 8px 0 25px;
+
     font-size: 13px;
+
     line-height: 1.4;
-
-    margin: 0 auto 18px;
   }
 
 
-  /* CHECK */
+  /* -----------------------------------------
+     VERIFIED
+  ----------------------------------------- */
 
-  .verified-icon {
-    width: 62px;
-    height: 62px;
+  .verified-section {
+    display: flex;
 
-    margin: 0 auto 10px;
+    justify-content: flex-start;
 
-    font-size: 38px;
+    text-align: left;
+
+    gap: 16px;
+
+    margin-bottom: 22px;
   }
 
 
-  /* VERIFIED */
+  .verified-shield {
+    width: 65px;
+    height: 75px;
 
-  .verification-left h2 {
-    font-size: 23px;
+    font-size: 36px;
+  }
+
+
+  .verified-content {
+    flex: 1;
+  }
+
+  .verified-content h2 {
+    margin: 0 0 7px;
+
+    font-size: 20px;
+
     line-height: 1.2;
-
-    margin: 0 0 10px;
   }
 
-  .verified-description {
-    max-width: 350px;
+  .verified-content p {
+    font-size: 11px;
 
-    margin: 0 auto 17px;
-
-    font-size: 13px;
     line-height: 1.5;
   }
 
 
-  /* SECURITY */
+  /* -----------------------------------------
+     SECURITY BOX
+  ----------------------------------------- */
 
   .security-box {
-    width: 100%;
+    padding: 13px 14px;
 
-    padding: 13px;
-
-    gap: 10px;
-
-    border-radius: 11px;
+    border-radius: 9px;
   }
 
-  .security-icon {
-    min-width: 30px;
-    width: 30px;
-    height: 30px;
-
-    font-size: 17px;
-  }
-
-  .security-box strong {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-
-  .security-box p {
-    margin-top: 4px;
+  .security-row {
+    gap: 9px;
 
     font-size: 10px;
+
     line-height: 1.4;
   }
 
+  .security-row + .security-row {
+    margin-top: 10px;
+  }
 
-  /* CERTIFICATE CARD */
+  .security-check {
+    width: 21px;
+    height: 21px;
+
+    font-size: 12px;
+  }
+
+
+  /* -----------------------------------------
+     CERTIFICATE CARD
+  ----------------------------------------- */
 
   .certificate-card {
-    border-radius: 14px;
+    width: 100%;
 
-    box-shadow:
-      0 8px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
   }
 
 
-  .certificate-card-header {
-    min-height: 52px;
+  .certificate-card::before {
+    padding: 16px 14px;
 
-    padding: 0 13px;
+    font-size: 11px;
 
-    gap: 8px;
+    letter-spacing: 0.5px;
   }
 
-  .certificate-card-header > span:first-child {
-    font-size: 10px;
-    letter-spacing: 0.8px;
-  }
-
-  .verified-badge {
-    padding: 7px 10px;
-
-    font-size: 8px;
-  }
-
-
-  /* DETAILS */
 
   .certificate-details {
-    padding: 5px 13px 10px;
+    padding: 3px 14px 8px;
   }
+
+
+  /* -----------------------------------------
+     DETAIL ROWS
+  ----------------------------------------- */
 
   .detail-item {
-    padding: 9px 0;
+    grid-template-columns: 48% 52%;
+
+    min-height: 45px;
+
+    padding: 8px 0;
   }
 
-  .detail-item span {
-    margin-bottom: 3px;
 
-    font-size: 8px;
-    letter-spacing: 0.8px;
-  }
+  .detail-item > span:first-child {
+    font-size: 10px;
 
-  .detail-item strong {
-    font-size: 12px;
     line-height: 1.3;
   }
 
-  .status-detail strong {
-    font-size: 12px;
+
+  .detail-item > strong {
+    font-size: 11px;
+
+    line-height: 1.3;
   }
 
 
-  /* FOOTER */
+  /* -----------------------------------------
+     STATUS
+  ----------------------------------------- */
+
+  .status-badge {
+    padding: 5px 9px;
+
+    font-size: 9px;
+
+    border-radius: 6px;
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+  ----------------------------------------- */
 
   .verify-page footer {
+    width: 100%;
+
     padding: 12px 10px 18px;
 
     font-size: 8px;
@@ -595,90 +756,95 @@
 
 
 /* =========================================================
-   VERY SMALL PHONES
+   SMALL PHONES
    ========================================================= */
 
 @media (max-width: 400px) {
 
   .verify-header {
-    padding: 15px 10px 10px;
+    height: 62px;
   }
 
   .verify-logo {
-    width: 120px;
+    width: 135px;
   }
+
 
   .verification-container {
-    padding: 12px 9px 20px;
-    gap: 17px;
+    padding: 20px 10px 18px;
+
+    gap: 20px;
   }
 
+
   .verification-left h1 {
-    font-size: 22px;
+    font-size: 23px;
   }
 
   .verification-subtitle {
     font-size: 11px;
+
+    margin-bottom: 20px;
   }
 
-  .verified-icon {
-    width: 55px;
-    height: 55px;
 
-    font-size: 33px;
+  .verified-section {
+    gap: 12px;
+
+    margin-bottom: 18px;
   }
 
-  .verification-left h2 {
-    font-size: 20px;
+  .verified-shield {
+    width: 58px;
+    height: 68px;
+
+    font-size: 32px;
   }
 
-  .verified-description {
-    font-size: 11px;
+  .verified-content h2 {
+    font-size: 18px;
   }
 
-  .security-box {
-    padding: 10px;
-  }
-
-  .security-box strong {
+  .verified-content p {
     font-size: 10px;
   }
 
-  .security-box p {
+
+  .security-box {
+    padding: 11px;
+  }
+
+  .security-row {
     font-size: 9px;
   }
 
-  .certificate-card-header {
-    min-height: 48px;
-    padding: 0 10px;
-  }
 
-  .certificate-card-header > span:first-child {
-    font-size: 8px;
-  }
+  .certificate-card::before {
+    padding: 14px 11px;
 
-  .verified-badge {
-    padding: 6px 8px;
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .certificate-details {
-    padding: 4px 10px 8px;
+    padding: 2px 11px 6px;
   }
 
   .detail-item {
+    min-height: 42px;
+
     padding: 7px 0;
   }
 
-  .detail-item span {
-    font-size: 7px;
+  .detail-item > span:first-child {
+    font-size: 9px;
   }
 
-  .detail-item strong {
-    font-size: 11px;
+  .detail-item > strong {
+    font-size: 10px;
   }
 
-  .verify-page footer {
-    font-size: 7px;
+  .status-badge {
+    font-size: 8px;
+    padding: 4px 7px;
   }
 }
