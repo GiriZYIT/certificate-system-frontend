@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import api from "../services/api";
 import "../styles/verify.css";
 
+import logo from "../assets/logo.webp";
+
 export default function VerifyCertificate() {
   const { certificate_id } = useParams();
 
@@ -40,6 +42,7 @@ export default function VerifyCertificate() {
       <div className="verify-page">
         <header className="verify-header">
           <div className="verify-logo">
+            <img src={logo} alt="ZYVENIQ Logo" />
             <strong>ZYVENIQ</strong>
             <span>wear the moment</span>
           </div>
