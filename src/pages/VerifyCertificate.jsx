@@ -41,11 +41,11 @@ export default function VerifyCertificate() {
     return (
       <div className="verify-page">
         <header className="verify-header">
-          <div className="verify-logo">
-            <img src={logo} alt="ZYVENIQ Logo" />
-            <strong>ZYVENIQ</strong>
-            <span>wear the moment</span>
-          </div>
+        <img
+            src={logo}
+            alt="ZYVENIQ"
+            className="verify-logo"
+        />
         </header>
 
         <main className="invalid-certificate">
