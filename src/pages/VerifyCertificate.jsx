@@ -50,11 +50,23 @@ export default function VerifyCertificate() {
       <div className="verify-page">
 
         <header className="verify-header">
-          <img
-            src={logo}
-            alt="ZYVENIQ"
-            className="verify-logo"
-          />
+            <div className="brand">
+
+                <img
+                src={logo}
+                alt="ZYVENIQ Logo"
+                className="brand-logo"
+                />
+
+                <div className="brand-name">
+                ZYVENIQ
+                </div>
+
+                <div className="brand-tagline">
+                wear the moment
+                </div>
+
+            </div>
         </header>
 
         <main className="invalid-certificate">
