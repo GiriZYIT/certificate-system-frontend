@@ -1,0 +1,566 @@
+/* =========================================================
+   ZYVENIQ CERTIFICATE VERIFICATION PAGE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.verify-page {
+  min-height: 100vh;
+  background: #f5f7fa;
+  color: #172033;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.verify-header {
+  height: 76px;
+  background: #071b3a;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 7%;
+}
+
+.verify-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.verify-logo strong {
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.verify-logo span {
+  margin-top: 5px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  opacity: 0.75;
+}
+
+
+/* NAVIGATION */
+
+.verify-header nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.verify-header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
+}
+
+.verify-header nav a:hover {
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.verification-container {
+  width: min(1150px, 90%);
+  margin: 70px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 70px;
+  align-items: center;
+}
+
+
+/* =========================================================
+   LEFT SECTION
+   ========================================================= */
+
+.verification-left h1 {
+  margin: 0;
+
+  font-size: 38px;
+  font-weight: 700;
+  color: #101b2d;
+}
+
+.verification-subtitle {
+  margin-top: 12px;
+  margin-bottom: 38px;
+
+  color: #687386;
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   VERIFIED ICON
+   ========================================================= */
+
+.verified-icon {
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  background: #dff7e7;
+  color: #159447;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 43px;
+  font-weight: bold;
+
+  margin-bottom: 22px;
+}
+
+.verification-left h2 {
+  margin: 0;
+
+  font-size: 25px;
+  letter-spacing: 1px;
+
+  color: #159447;
+}
+
+.verified-description {
+  max-width: 530px;
+
+  margin-top: 14px;
+  margin-bottom: 30px;
+
+  color: #596579;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SECURITY BOX
+   ========================================================= */
+
+.security-box {
+  max-width: 560px;
+
+  background: #e9f8ef;
+  border: 1px solid #c7ecd5;
+
+  border-radius: 10px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.security-icon {
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #20a05a;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.security-box strong {
+  display: block;
+
+  color: #176b3b;
+  font-size: 14px;
+
+  margin-bottom: 5px;
+}
+
+.security-box p {
+  margin: 0;
+
+  color: #47735a;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CERTIFICATE CARD
+   ========================================================= */
+
+.certificate-card {
+  background: white;
+
+  border-radius: 14px;
+
+  box-shadow: 0 12px 35px rgba(19, 35, 60, 0.09);
+
+  overflow: hidden;
+
+  border: 1px solid #e8ebef;
+}
+
+
+/* CARD HEADER */
+
+.certificate-card-header {
+  background: #071b3a;
+  color: white;
+
+  padding: 21px 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.certificate-card-header > span:first-child {
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+.verified-badge {
+  background: #22a35a;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+
+/* =========================================================
+   CERTIFICATE DETAILS
+   ========================================================= */
+
+.certificate-details {
+  padding: 28px;
+}
+
+.detail-item {
+  padding: 17px 0;
+
+  border-bottom: 1px solid #edf0f3;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.detail-item:first-child {
+  padding-top: 0;
+}
+
+.detail-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.detail-item span {
+  color: #8a94a3;
+
+  font-size: 11px;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.detail-item strong {
+  color: #1d2939;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  word-break: break-word;
+}
+
+
+/* VERIFIED STATUS */
+
+.status-detail strong {
+  color: #159447;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.verify-page footer {
+  margin-top: 80px;
+
+  background: #071b3a;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  text-align: center;
+
+  padding: 24px;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.verify-loading {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f7fa;
+
+  color: #526075;
+}
+
+.loader {
+  width: 42px;
+  height: 42px;
+
+  border: 4px solid #dce2e9;
+  border-top-color: #071b3a;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   INVALID CERTIFICATE
+   ========================================================= */
+
+.invalid-certificate {
+  min-height: 65vh;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+.invalid-icon {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  background: #fde8e8;
+  color: #d92d20;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+  font-weight: bold;
+
+  margin-bottom: 20px;
+}
+
+.invalid-certificate h1 {
+  color: #c62828;
+  font-size: 25px;
+}
+
+.invalid-certificate p {
+  color: #687386;
+}
+
+.certificate-id {
+  margin-top: 15px;
+
+  padding: 12px 18px;
+
+  background: white;
+
+  border: 1px solid #e1e5ea;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  color: #536174;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .verification-container {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    margin-top: 45px;
+  }
+
+  .verification-left {
+    text-align: center;
+  }
+
+  .verified-icon {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .verified-description,
+  .security-box {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .verification-left h1 {
+    font-size: 32px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .verify-header {
+    height: auto;
+
+    padding: 18px 20px;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .verify-logo {
+    align-items: center;
+  }
+
+  .verify-header nav {
+    width: 100%;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+  }
+
+  .verify-header nav a {
+    font-size: 12px;
+  }
+
+
+  .verification-container {
+    width: 92%;
+
+    margin: 35px auto;
+
+    gap: 35px;
+  }
+
+
+  .verification-left h1 {
+    font-size: 27px;
+  }
+
+  .verification-subtitle {
+    font-size: 14px;
+
+    margin-bottom: 28px;
+  }
+
+
+  .verified-icon {
+    width: 70px;
+    height: 70px;
+
+    font-size: 35px;
+  }
+
+  .verification-left h2 {
+    font-size: 20px;
+  }
+
+  .verified-description {
+    font-size: 14px;
+  }
+
+
+  .security-box {
+    padding: 15px;
+
+    gap: 10px;
+  }
+
+
+  .certificate-card-header {
+    padding: 17px;
+  }
+
+  .certificate-details {
+    padding: 20px;
+  }
+
+  .detail-item {
+    padding: 14px 0;
+  }
+
+
+  .verify-page footer {
+    margin-top: 45px;
+
+    padding: 20px 15px;
+
+    font-size: 11px;
+  }
+}

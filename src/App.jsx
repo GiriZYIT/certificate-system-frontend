@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import AddIntern from "./pages/AddIntern";
 import InternList from "./pages/InternList";
+import VerifyCertificate from "./pages/VerifyCertificate";
+
 
 function App() {
   return (
@@ -15,7 +17,7 @@ function App() {
           element={<Dashboard />}
         />
 
-        {/* Add Certificate */}
+        {/* Create Certificate */}
         <Route
           path="/add"
           element={<AddIntern />}
@@ -27,10 +29,16 @@ function App() {
           element={<AddIntern />}
         />
 
-        {/* Intern List */}
+        {/* All Certificates */}
         <Route
           path="/interns"
           element={<InternList />}
+        />
+
+        {/* Public Certificate Verification */}
+        <Route
+          path="/verify/:certificate_id"
+          element={<VerifyCertificate />}
         />
 
         {/* Unknown URL */}

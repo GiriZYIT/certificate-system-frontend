@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
@@ -12,14 +12,15 @@ export default function AddIntern() {
   const [formData, setFormData] = useState({
     intern_name: "",
     intern_id: "",
-    email: "",
     role: "",
     department: "",
     start_date: "",
     end_date: "",
     duration: "",
-    certificate_pdf: null,
   });
+
+  const { certificate_id } = useParams();
+  const { addNotification } = useNotification();
 
   const handleChange = (e) => {
     setFormData({
@@ -28,101 +29,40 @@ export default function AddIntern() {
     });
   };
 
-  const handleFileChange = (e) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.files[0],
-  });
-};
-
-  const { certificate_id } = useParams();
-  const { addNotification } = useNotification();
-/*
-  useEffect(() => {
-
-    if (certificate_id) {
-
-        loadIntern();
-
-    }
-
-  }, [certificate_id]);
-
-  const loadIntern = async () => {
-
-    const res = await api.get(
-        `/intern/${certificate_id}`
-    );
-
-    setFormData({
-        intern_name: res.data.intern_name,
-        intern_id: res.data.intern_id,
-        email: res.data.email,
-        role: res.data.role,
-        department: res.data.department,
-        start_date: res.data.start_date,
-        end_date: res.data.end_date,
-        duration: res.data.duration
-    });
-
-  };
-*/
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  try {
+    try {
       if (certificate_id) {
+        await api.put(`/intern/${certificate_id}`, formData);
 
-          await api.put(
-              `/intern/${certificate_id}`,
-              formData
-          );
+        toast.success("Intern Updated Successfully");
+        addNotification("Intern details updated.");
+      } else {
+        await api.post("/intern", formData);
 
-          toast.success("Intern Updated Successfully");
-
-            addNotification(
-                "Intern details updated."
-            );
-
-      }
-      else {
-
-          const data = new FormData();
-
-              Object.keys(formData).forEach((key) => {
-                  data.append(key, formData[key]);
-              });
-
-              await api.post("/intern", data, {
-                  headers: {
-                      "Content-Type": "multipart/form-data",
-                  },
-          });
-
-          toast.success("Certificate Created Successfully");
-
-          addNotification(
-              "Certificate created successfully."
-          );
-
+        toast.success("Certificate Created Successfully");
+        addNotification("Certificate created successfully.");
       }
 
-     
       setFormData({
         intern_name: "",
         intern_id: "",
-        email: "",
         role: "",
         department: "",
         start_date: "",
         end_date: "",
         duration: "",
       });
-      } catch (err) {
-        console.error(err);
-        toast.error("Failed to create certificate.");
-      }
- };
+    } catch (err) {
+      console.error(err);
+
+      toast.error(
+        err.response?.data?.detail ||
+          "Failed to save certificate."
+      );
+    }
+  };
 
   return (
     <>
@@ -130,20 +70,21 @@ export default function AddIntern() {
       <Topbar />
 
       <div className="content form-page">
-
         <div className="form-card">
 
-          <h1>{certificate_id
-                ? "Edit Internship"
-                : "Create Internship Certificate"}
+          <h1>
+            {certificate_id
+              ? "Edit Internship"
+              : "Create Internship Certificate"}
           </h1>
 
           <p>
             Fill in the intern details to generate a certificate.
           </p>
 
-         <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
 
+            {/* Intern Name */}
             <input
               type="text"
               name="intern_name"
@@ -153,6 +94,7 @@ export default function AddIntern() {
               required
             />
 
+            {/* Intern ID */}
             <input
               type="text"
               name="intern_id"
@@ -162,15 +104,7 @@ export default function AddIntern() {
               required
             />
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-
+            {/* Role */}
             <input
               type="text"
               name="role"
@@ -180,6 +114,7 @@ export default function AddIntern() {
               required
             />
 
+            {/* Department */}
             <input
               type="text"
               name="department"
@@ -189,8 +124,12 @@ export default function AddIntern() {
               required
             />
 
+            {/* Start Date */}
             <div className="date-group">
-              <label htmlFor="start_date">Start Date</label>
+              <label htmlFor="start_date">
+                Start Date
+              </label>
+
               <input
                 type="date"
                 id="start_date"
@@ -201,8 +140,12 @@ export default function AddIntern() {
               />
             </div>
 
+            {/* End Date */}
             <div className="date-group">
-              <label htmlFor="end_date">End Date</label>
+              <label htmlFor="end_date">
+                End Date
+              </label>
+
               <input
                 type="date"
                 id="end_date"
@@ -213,6 +156,7 @@ export default function AddIntern() {
               />
             </div>
 
+            {/* Duration */}
             <input
               type="text"
               name="duration"
@@ -222,24 +166,26 @@ export default function AddIntern() {
               required
             />
 
-            <label>Upload Certificate PDF</label>
+            {/* Status */}
+            <div className="status-box">
+              <label>
+                Certificate Status
+              </label>
 
-            <input
-              type="file"
-              name="certificate_pdf"
-              accept=".pdf"
-              onChange={handleFileChange}
-              required
-            />
+              <div className="verified-status">
+                ✓ VERIFIED
+              </div>
+            </div>
 
+            {/* Submit */}
             <button type="submit">
-              {certificate_id ? "Update Intern" : "Generate Certificate"}
+              {certificate_id
+                ? "Update Intern"
+                : "Create Certificate"}
             </button>
 
           </form>
-
         </div>
-
       </div>
     </>
   );
