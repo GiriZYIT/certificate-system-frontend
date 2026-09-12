@@ -13,10 +13,7 @@ export default function VerifyCertificate() {
   useEffect(() => {
     const verifyCertificate = async () => {
       try {
-        const response = await api.get(
-          `/intern/${certificate_id}`
-        );
-
+        const response = await api.get(`/intern/${certificate_id}`);
         setIntern(response.data);
       } catch (err) {
         console.error(err);
@@ -72,36 +69,18 @@ export default function VerifyCertificate() {
   return (
     <div className="verify-page">
 
-      {/* ================= HEADER ================= */}
-
+      {/* HEADER */}
       <header className="verify-header">
-
         <div className="verify-logo">
           <strong>ZYVENIQ</strong>
           <span>wear the moment</span>
         </div>
-
-        <nav>
-          <a href="/">Home</a>
-
-          <a href={`/verify/${certificate_id}`}>
-            Verify Certificate
-          </a>
-
-          <a href="#contact">
-            Contact Us
-          </a>
-        </nav>
-
       </header>
 
-
-      {/* ================= MAIN ================= */}
-
+      {/* MAIN VERIFICATION AREA */}
       <main className="verification-container">
 
         {/* LEFT SIDE */}
-
         <section className="verification-left">
 
           <h1>Certificate Verification</h1>
@@ -110,23 +89,18 @@ export default function VerifyCertificate() {
             Verify the authenticity of your certificate
           </p>
 
-
-          {/* VERIFIED ICON */}
-
           <div className="verified-icon">
             ✓
           </div>
 
-
-          <h2>CERTIFICATE VERIFIED</h2>
+          <h2>
+            CERTIFICATE VERIFIED
+          </h2>
 
           <p className="verified-description">
-            This certificate is valid and has been officially
-            issued by Zyveniq Private Limited.
+            This certificate is valid and has been officially issued by
+            Zyveniq Private Limited.
           </p>
-
-
-          {/* SECURITY BOX */}
 
           <div className="security-box">
 
@@ -149,92 +123,99 @@ export default function VerifyCertificate() {
         </section>
 
 
-        {/* RIGHT SIDE */}
-
+        {/* CERTIFICATE DETAILS */}
         <section className="certificate-card">
 
           <div className="certificate-card-header">
-            <span>INTERNSHIP CERTIFICATE</span>
+
+            <span>
+              INTERNSHIP CERTIFICATE
+            </span>
 
             <span className="verified-badge">
               VERIFIED
             </span>
+
           </div>
 
 
           <div className="certificate-details">
 
-            {/* Intern Name */}
-
+            {/* INTERN NAME */}
             <div className="detail-item">
               <span>Intern Name</span>
-
               <strong>
                 {intern.intern_name}
               </strong>
             </div>
 
 
-            {/* Role */}
-
+            {/* ROLE */}
             <div className="detail-item">
               <span>Role</span>
-
               <strong>
                 {intern.role}
               </strong>
             </div>
 
 
-            {/* Department */}
-
+            {/* DEPARTMENT */}
             <div className="detail-item">
               <span>Department</span>
-
               <strong>
                 {intern.department}
               </strong>
             </div>
 
 
-            {/* Duration */}
+            {/* START DATE */}
+            <div className="detail-item">
+              <span>Internship Start Date</span>
+              <strong>
+                {intern.start_date}
+              </strong>
+            </div>
 
+
+            {/* END DATE */}
+            <div className="detail-item">
+              <span>Internship End Date</span>
+              <strong>
+                {intern.end_date}
+              </strong>
+            </div>
+
+
+            {/* DURATION */}
             <div className="detail-item">
               <span>Internship Duration</span>
-
               <strong>
                 {intern.duration}
               </strong>
             </div>
 
 
-            {/* Certificate ID */}
-
+            {/* CERTIFICATE ID */}
             <div className="detail-item">
               <span>Certificate ID</span>
-
               <strong>
                 {intern.certificate_id}
               </strong>
             </div>
 
 
-            {/* Issue Date */}
-
+            {/* ISSUE DATE = END DATE */}
             <div className="detail-item">
               <span>Issue Date</span>
-
               <strong>
-                {intern.issue_date}
+                {intern.end_date}
               </strong>
             </div>
 
 
-            {/* Status */}
-
+            {/* STATUS */}
             <div className="detail-item status-detail">
               <span>Status</span>
-
               <strong>
                 ✓ VERIFIED
               </strong>
@@ -247,9 +228,8 @@ export default function VerifyCertificate() {
       </main>
 
 
-      {/* ================= FOOTER ================= */}
-
-      <footer id="contact">
+      {/* FOOTER */}
+      <footer>
         © 2026 Zyveniq Private Limited. All rights reserved.
       </footer>
 
