@@ -109,13 +109,13 @@ export default function InternList() {
                                       <td>{intern.duration}</td>
 
                                       <td>
-                                          <a
-                                              href={`${import.meta.env.VITE_API_URL}/verify/${intern.certificate_id}`}
-                                              target="_blank"
-                                              rel="noreferrer"
-                                          >
-                                              Verify
-                                          </a>
+                                       <a
+                                            href={`https://zyveniq.web/verify/${intern.certificate_id}`}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            Verify
+                                        </a>
                                       </td>
 
                                       <td>

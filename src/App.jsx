@@ -1,17 +1,74 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import Dashboard from "./pages/Dashboard";
 import AddIntern from "./pages/AddIntern";
 import InternList from "./pages/InternList";
+import Login from "./pages/login";
+
+function ProtectedRoute({ children }) {
+  const isLoggedIn = localStorage.getItem("adminLoggedIn");
+
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+}
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
-       <Route path="/add" element={<AddIntern />} />
-       <Route path="/edit/:certificate_id" element={<AddIntern />} />
-        <Route path="/interns" element={<InternList />} />
+
+        {/* Public Login */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Protected Dashboard */}
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Protected Add */}
+        <Route
+          path="/add"
+          element={
+            <ProtectedRoute>
+              <AddIntern />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Protected Edit */}
+        <Route
+          path="/edit/:certificate_id"
+          element={
+            <ProtectedRoute>
+              <AddIntern />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Protected Intern List */}
+        <Route
+          path="/interns"
+          element={
+            <ProtectedRoute>
+              <InternList />
+            </ProtectedRoute>
+          }
+        />
+
+        {/* Unknown URL */}
+        <Route
+          path="*"
+          element={<Navigate to="/" replace />}
+        />
+
       </Routes>
     </BrowserRouter>
   );

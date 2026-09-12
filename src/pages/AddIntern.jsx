@@ -18,7 +18,6 @@ export default function AddIntern() {
     start_date: "",
     end_date: "",
     duration: "",
-    photo: null,
     certificate_pdf: null,
   });
 
@@ -220,16 +219,6 @@ export default function AddIntern() {
               placeholder="Duration"
               value={formData.duration}
               onChange={handleChange}
-              required
-            />
-
-            <label>Upload Intern Photo</label>
-
-            <input
-              type="file"
-              name="photo"
-              accept="image/*"
-              onChange={handleFileChange}
               required
             />
 
